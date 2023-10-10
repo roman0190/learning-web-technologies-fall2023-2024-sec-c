@@ -69,7 +69,8 @@ if (isset($_POST['submit'])) {
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <input type="submit" name="submit" value="Submit">
+                                        <input type="submit" name="submit" value="Submit"><br>
+                                        <input type="checkbox" name="remember_me" value=""> Remember Me<br><br>
                                         <a href="forgotpass.php">Forgot Password</a>
                                     </td>
                                 </tr>
