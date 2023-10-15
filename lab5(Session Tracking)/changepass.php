@@ -44,7 +44,7 @@ if (isset($_REQUEST['submit'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit Profile</title>
+    <title>Change Password</title>
 </head>
 <body>
     <table border="1">
