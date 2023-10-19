@@ -29,6 +29,9 @@ if(isset($_REQUEST['submit'])){
     if (lengthcount($password) < 8) {
         $error_message .= "Password must contain at least two (8) characters!<br>";
     }
+    } else if (!str_contains($password, '@') && !str_contains($password, '#') && !str_contains($password, '$' && !str_contains($password, '%'))) {
+        $error = "password must contain a special characters (@,#,$,%)";
+    }
     if (empty($error_message)) {
     
         header('welcome.php');
