@@ -14,11 +14,9 @@ if (isset($_POST['submit'])) {
         $error_message .= "You must fill in the Password! <br>";
     }
 
-    // Retrieve cookie values (assuming they were set during registration)
     $cookie_username = isset($_COOKIE['username']) ? $_COOKIE['username'] : '';
     $cookie_password = isset($_COOKIE['password']) ? $_COOKIE['password'] : '';
 
-    // Check if the provided username and password match the stored cookie values
     if ($username == $cookie_username && $password == $cookie_password) {
         $login_success = true;
     }
