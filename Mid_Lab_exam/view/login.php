@@ -10,7 +10,7 @@
 						Password<br/>
 						<input type="password" name="password"><br /><hr/>
 						<input type="submit" name="submit" value="Login">
-						<a href="registration.html">Register</a>
+						<a href="registration.php">Register</a>
 					</fieldset>
 				</td>
 			</tr>

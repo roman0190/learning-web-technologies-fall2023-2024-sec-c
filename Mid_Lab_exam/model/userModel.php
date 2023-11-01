@@ -1,23 +1,24 @@
 <?php
     require_once('db.php');
 
-    function login($userId, $password){
+    function getUserData($userId, $password) {
         $con = getConnection();
-        $sql = "select * from users where id='{$userId}' and password='{$password}'";
+        $sql = "SELECT * FROM users WHERE id='{$userId}' AND password='{$password}'";
         $result = mysqli_query($con, $sql);
-        $count = mysqli_num_rows($result);
-
-        if($count == 1){
-            return true;
-        }else{
-            return false;
+    
+        if ($result && mysqli_num_rows($result) == 1) {
+            $userData = mysqli_fetch_assoc($result);
+            return $userData; 
         }
+    
+        return false; 
     }
+    
    
     function RegistrationUser($id, $password, $name, $userType) {
         $con = getConnection();
         
-        // Check if the ID already exists in the database
+        
         $checkQuery = "SELECT id FROM users WHERE id = '$id'";
         $checkResult = mysqli_query($con, $checkQuery);
         
@@ -36,6 +37,18 @@
             }
         }
     }
+    function updatePassword($id, $confirmPassword) {
+    
+            $con = getConnection();
+        
+            $sql = "UPDATE users SET password = '$confirmPassword'WHERE id = $id";
+    
+            if (mysqli_query($con, $sql)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     
     
 
@@ -65,36 +78,5 @@
         return $users;
     }
 
-    function updateUser($user){
-
-       
-        $con = getConnection();
-
-
-        $id = $user['id'];
-        $username = $user['username'];
-        $email = $user['email'];
-
-        $sql = "UPDATE users SET username = '$username', email = '$email' WHERE id = $id";
-
-        if (mysqli_query($con, $sql)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    function deleteUser($id){
-
-        $con = getConnection();
-        $sql = "DELETE FROM users WHERE id = $id";
-        
-        if (mysqli_query($con, $sql)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-
+    
 ?>

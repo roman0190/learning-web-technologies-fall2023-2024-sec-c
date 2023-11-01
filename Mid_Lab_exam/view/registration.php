@@ -14,7 +14,7 @@
 						<input type="radio" name="user_type" value="Admin"/>Admin
 						<hr/>
 						<input type="submit" name="submit" value="Sign Up">
-						<a href="../view/login.html">Sign In</a>
+						<a href="../view/login.php">Sign In</a>
 					</fieldset>
 				</td>
 			</tr>                                

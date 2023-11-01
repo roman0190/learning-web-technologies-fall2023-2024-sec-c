@@ -26,16 +26,17 @@ if (isset($_REQUEST['submit'])) {
         echo "Password must be at least 4 characters long.";
     } else {
         $sql = RegistrationUser($id, $password, $name, $userType);
-
+        $user=[
+            'id'=>$id,
+            'password'=>$password,
+            'name'=>$name,
+            'user_type'=>$userType
+        ];
         if ($sql) {
-            $_SESSION['user_id'] = $id; 
-
-            
-            setcookie("user_id", $id, time() + (86400 * 30), "/");
-
             $_SESSION['flag'] = "true"; 
+            $_SESSION['user'] =$user;
 
-            header('location: ../view/login.html'); 
+            header('location: ../view/login.php'); 
         } else {
             echo "Invalid ";
         }
