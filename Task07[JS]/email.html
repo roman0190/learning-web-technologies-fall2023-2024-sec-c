@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Email validation with JS</title>
+    <script>
+        function validateEmail() {
+            let emailInput = document.getElementById("email").value;
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+            if (emailInput.trim() === "") {
+                alert("Email cannot be empty");
+                return false;
+            }
+
+
+            if (!emailRegex.test(emailInput)) {
+                alert("Please enter a valid email address (e.g., anything@example.com)");
+                return false;
+            }
+
+            alert("Email is valid!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <fieldset style="width: 190px;">
+            <legend>Email</legend>
+            <div>
+                <input type="email" name="email" id="email">
+                <input type="button" value="i" title="hint: example@gmail.com"><br><br>
+                <input type="button" value="Submit" onclick="validateEmail()">
+            </div>
+        </fieldset>
+    </center>
+</body>
+</html>

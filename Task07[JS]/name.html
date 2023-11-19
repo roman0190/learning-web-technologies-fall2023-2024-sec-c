@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Name validation with JS</title>
+    <script>
+        function validateName() {
+            let nameInput = document.getElementById("name").value;
+
+            if (nameInput === " ") {
+                alert("Name cannot be empty");
+                return false;
+            }
+
+            let words = nameInput.split(" ");
+            if (words.length < 2) {
+                alert("Name must contain at least two words");
+                return false;
+            }
+
+            let validCharacters = /^[a-zA-Z.\- ]+$/;
+            if (!validCharacters.test(nameInput)) {
+                alert("Name can only contain letters, dot(.) or dash(-)");
+                return false;
+            }
+
+            let firstCharacter = nameInput.charAt(0);
+            let validFirstCharacter = /^[a-zA-Z]+$/;
+            if (!validFirstCharacter.test(firstCharacter)) {
+                alert("Name must start with a letter");
+                return false;
+            }
+
+            alert("Name is valid!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <fieldset style="width: 150px;">
+            <legend>Name</legend>
+            <div>
+                <input type="text" name="name" id="name" ><br><br>
+                <input type="submit" value="Submit" onclick="validateName()">
+            </div>
+        </fieldset>
+    </center>
+</body>
+</html>

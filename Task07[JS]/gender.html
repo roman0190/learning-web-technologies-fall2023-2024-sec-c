@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>Gender validation with JS</title>
+    <script>
+        function validateGender() {
+        
+            let genderRadios = document.getElementsByName("gender");
+
+            let isChecked = false;
+            for (let i = 0; i < genderRadios.length; i++) {
+                if (genderRadios[i].checked) {
+                    isChecked = true;
+                    break;
+                }
+            }
+
+            if (!isChecked) {
+                alert("Please select a gender.");
+                return false;
+            }
+
+            // Gender is valid
+            alert("Gender is valid!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <fieldset style="width: 190px;">
+            <legend>Gender</legend>
+            <div>
+                <input type="radio" name="gender" id="male" value="Male">
+                <label for="male">Male</label>
+                
+                <input type="radio" name="gender" id="female" value="Female">
+                <label for="female">Female</label>
+                
+                <input type="radio" name="gender" id="other" value="Other">
+                <label for="other">Other</label>
+            </div>
+            <br>
+            <input type="button" value="Submit" onclick="validateGender()">
+        </fieldset>
+    </center>
+</body>
+</html>
