@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Profile validation with JS</title>
+    <script>
+        function validateProfile() {
+          
+            let userId = document.getElementById("userid").value;
+            if (!userId || isNaN(userId) || parseInt(userId) <= 0) {
+                alert("User Id cannot be empty and has to be a positive number");
+                return false;
+            }
+
+         
+            let picture = document.getElementById("picture").value;
+            if (!picture) {
+                alert("Picture cannot be empty");
+                return false;
+            }
+
+       
+            alert("Profile is valid!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <fieldset style="width: 400px;">
+            <legend>Profile</legend>
+            <div>
+                <label for="userid" style="align-items: center;">User Id</label>
+                <input type="text" name="userid" id="userid"><br><br>
+
+                <label for="picture" style="">Picture</label>
+                <input type="file" name="picture" id="picture"><br><hr>
+
+                <input type="button" value="Submit" onclick="validateProfile()">
+            </div>
+        </fieldset>
+    </center>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Blood Group validation with JS</title>
+    <script>
+        function validateBloodGroup() {
+          
+            let bloodGroup = document.getElementById("bloodGroup").value;
+
+            if (bloodGroup === "") {
+                alert("Please select a Blood Group.");
+                return false;
+            }
+            
+            alert("Blood Group is valid: " + bloodGroup);
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <fieldset style="width: 180px;">
+            <legend>Blood Group</legend>
+            <div>
+                <label for="bloodGroup">Select Blood Group:</label>
+                <select id="bloodGroup">
+                    <option value="">-- Select --</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+                <br>
+                <input type="button" value="Submit" onclick="validateBloodGroup()">
+            </div>
+        </fieldset>
+    </center>
+</body>
+</html>

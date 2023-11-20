@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Date of Birth validation with JS</title>
+    <script>
+        function validateDob() {
+            var dobInput = document.getElementById("date").value;
+
+            if (dobInput.trim() === "") {
+                alert("Date of Birth cannot be empty");
+                return false;
+            }
+
+            alert("Date of Birth is valid!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <fieldset style="width: 150px;">
+            <legend>Date of Birth</legend>
+            <div>
+                <label for="" style="font-size: small;">dd mm yyyy</label><br>
+                <input type="date" name="" id="date"><br><hr>
+                <input type="button" value="Submit" onclick="validateDob()">
+            </div>
+        </fieldset>
+    </center>
+</body>
+</html>
